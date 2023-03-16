@@ -1,8 +1,12 @@
+import java.util.Scanner;
+
 /**
  * @author MSC. Jaime Jesús Delgado Meraz
- * @version 0.1, 2023-03-14
+ * @version 0.2, 2023-03-16
  */
 public class Main {
+  // Abrimos un canal de lectura de teclado
+  private static final Scanner teclado = new Scanner(System.in);
   public static void main(String[] args) {
     // Esto es un comentario
     /* Esto es un comentario que puede ser de
@@ -16,11 +20,17 @@ public class Main {
     String esDonanteTexto;
     String nombre; // Cadena
 
-    edad = 35;
-    altura = 1.67;
-    inicial = 'J';
+    System.out.print("¿Como te llamas? ");
+    nombre = teclado.next();
+    System.out.print("¿Cuantos años tienes? ");
+    edad = teclado.nextInt();
+    System.out.print("¿Cuanto mides (m)? ");
+    altura = teclado.nextDouble();
+    //System.out.print("¿Cual es la inicial de tu nombre? ");
+    //inicial = teclado.next().charAt(0);
+    inicial = nombre.charAt(0);
     esDonante = true;
-    nombre = "Jaime";
+
 
     /* Operador ternario
       Se utiliza para "elegir" entre 2 opciones contrarias
