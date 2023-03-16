@@ -15,6 +15,6 @@ Ejemplos y ejercicios de código de la asignatura Fundamentos de Programación
 
 ## Ejemplos
 
-1. Declaración y asignación de variables ([Código](src/Main.java#L11))
-2. Impresión a pantalla en consola ([Código](src/Main.java#L32))
-3. Operador Ternario ([Código](src/Main.java#L25)) ([Referencia](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_Operator))
+1. Declaración y asignación de variables ([Código](src/Main.java))
+2. Impresión a pantalla en consola ([Código](src/Main.java))
+3. Operador Ternario ([Código](src/Main.java)) ([Referencia](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_Operator))
