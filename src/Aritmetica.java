@@ -19,5 +19,20 @@ public class Aritmetica {
 
     System.out.printf("La diferencia de los números es %d.\n", (a-b));
 
+    /* PATAS Y PEZUÑAS
+      Un granjero quiere saber cuantas patas 🐾 hay en su granja
+      considerando que tiene gallinas 🐔, vacas 🐄 y cerdos 🐖.
+     */
+    int gallinas, vacas, cerdos, total;
+
+    System.out.print("Cuantas 🐔 hay? ");
+    gallinas = teclado.nextInt();
+    System.out.print("Cuantas 🐄 hay? ");
+    vacas = teclado.nextInt();
+    System.out.print("Cuantos 🐖 hay? ");
+    cerdos = teclado.nextInt();
+
+    total = (2 * gallinas) + (4 * vacas) + (4 * cerdos);
+    System.out.printf("En total hay %d patas 🐾", total);
   }
 }
