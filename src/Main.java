@@ -24,7 +24,7 @@ public class Main {
 
     /* Operador ternario
       Se utiliza para "elegir" entre 2 opciones contrarias
-      Estructura:
+
       variable = (condición) ? caso verdadero : caso falso;
      */
     esDonanteTexto = (esDonante) ? "es" : "no es";
@@ -33,7 +33,7 @@ public class Main {
     System.out.print(altura);
     System.out.println(inicial);
     System.out.println(esDonante);
-    System.out.printf("%s tiene %d años y %s donante",
-        nombre, edad, esDonanteTexto);
+    System.out.printf("%s tiene %d años, mide %.2f m, la inicial de su nombre es %c y %s donante",
+        nombre, edad, altura, inicial, esDonanteTexto);
   }
 }
