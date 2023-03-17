@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 /**
  * @author MSC. Jaime Jesús Delgado Meraz
- * @version 0.1, 2023-03-16
+ * @version 0.2, 2023-03-17
  */
 public class Aritmetica {
   private static final Scanner teclado = new Scanner(System.in);
   public static void main(String[] args) {
-    int a, b;
+    /*int a, b;
 
     System.out.println("Dame un número entero: ");
     a = teclado.nextInt();
@@ -18,6 +18,7 @@ public class Aritmetica {
     System.out.printf("La suma de los números es %d.\n", (a+b));
 
     System.out.printf("La diferencia de los números es %d.\n", (a-b));
+    */
 
     /* PATAS Y PEZUÑAS
       Un granjero quiere saber cuantas patas 🐾 hay en su granja
@@ -33,6 +34,7 @@ public class Aritmetica {
     cerdos = teclado.nextInt();
 
     total = (2 * gallinas) + (4 * vacas) + (4 * cerdos);
-    System.out.printf("En total hay %d patas 🐾", total);
+    System.out.printf("En total hay %d patas 🐾\n", total);
+    System.out.printf("En total hay %d pezuñas\n", total - (2 * gallinas));
   }
 }
