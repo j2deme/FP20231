@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * @author MSC. Jaime Jesús Delgado Meraz
- * @version 0.2, 2023-03-16
+ * @version 0.3, 2023-03-17
  */
 public class Main {
   // Abrimos un canal de lectura de teclado
@@ -19,6 +19,7 @@ public class Main {
     boolean esDonante; // Booleano
     String esDonanteTexto;
     String nombre; // Cadena
+    String op;
 
     System.out.print("¿Como te llamas? ");
     nombre = teclado.next();
@@ -29,8 +30,14 @@ public class Main {
     //System.out.print("¿Cual es la inicial de tu nombre? ");
     //inicial = teclado.next().charAt(0);
     inicial = nombre.charAt(0);
-    esDonante = true;
-
+    System.out.print("¿Eres donante? [S/N]" );
+    op = teclado.next();
+    // Estructura Si-Sino
+    if (op.equals("S") || op.equals("s")){
+      esDonante = true;
+    } else {
+      esDonante = false;
+    }
 
     /* Operador ternario
       Se utiliza para "elegir" entre 2 opciones contrarias
