@@ -1,7 +1,7 @@
 import java.util.Scanner;
 /**
- * Simula el ajuste de un reloj análogico
- * a través de condiciones encadenadas y anidadas
+ * Simula el ajuste de un reloj analógico, a través de condiciones encadenadas
+ * y anidadas, se repite código de manera manual para repetir funcionalidad
  *
  * @author MSC. Jaime Jesús Delgado Meraz
  * @version 0.1, 2023-03-21
