@@ -27,7 +27,7 @@ public class Cadenas {
     /* Se crea un arreglo de caracteres para "contener" la cadena de caracteres
      * String -> char[]
      */
-    char nombre2[] = new char[nombre.length()]; // 1. Declaración e inicialización de arreglo
+    char[] nombre2 = new char[nombre.length()]; // 1. Declaración e inicialización de arreglo
     System.out.printf("El arreglo de caracteres mide %d\n", nombre2.length);
     nombre2 = nombre.toCharArray(); // 2. Asignación de valores del arreglo
 
