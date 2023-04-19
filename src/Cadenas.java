@@ -3,7 +3,6 @@ import java.util.Scanner;
  * Manejo de String para conversión a arreglo de caracteres para manipulación
  * de elementos individuales.
  *
- *
  * @author MSC. Jaime Jesús Delgado Meraz
  * @version 0.1, 2023-04-18
  */
@@ -17,7 +16,7 @@ public class Cadenas {
     nombre = teclado.next();
 
     System.out.printf("La cadena mide %d caracteres\n", nombre.length());
-    /* Imprimimos cada índice con su respectivo caracter,recordar que el índice
+    /* Imprimimos cada índice con su respectivo carácter, recordar que el índice
      * más grande de un arreglo es el tamaño menos uno, es decir, "n - 1"
      */
     /*for (int i = 0; i < nombre.length(); i++) {
