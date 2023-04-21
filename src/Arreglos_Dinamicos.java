@@ -50,7 +50,7 @@ public class Arreglos_Dinamicos {
     // Vacía la lista, reinicia su tamaño a 0
     lista.clear();
 
-    int op = 0;
+    int op;
     String articulo;
     do {
       System.out.println("= Lista de Compras 📃=");
