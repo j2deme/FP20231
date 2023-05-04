@@ -30,19 +30,19 @@ public class Matriz3D {
      */
     int[][][] hotel = new int[FILAS][COLUMNAS][PISOS];
 
-    // Inicializar de manera aleatoria el estado de 10 habitaciones para pruebas
-    /*for (int i = 0; i < 10; i++) {
+    // Inicializar de manera aleatoria el estado las habitaciones para pruebas
+    for (int i = 0; i < 20; i++) {
       int x = (int) (Math.random() * FILAS);
       int y = (int) (Math.random() * COLUMNAS);
       int z = (int) (Math.random() * PISOS);
       // La habitación puede estar ocupada de 1 a 4 personas
       int personas = (int) (Math.random() * 4) + 1;
       hotel[x][y][z] = personas;
-      // Algunas habitaciones pueden estar en mantenimiento
+      // 20% de probabilidad de que una habitación esté en mantenimiento
       if (Math.random() < 0.2){
         hotel[x][y][z] = MTTO;
       }
-    }*/
+    }
 
     int op;
     do {
@@ -85,7 +85,7 @@ public class Matriz3D {
           }
           // TODO: Cambiar de piso
           // Pedir coordenadas de la habitación a reservar
-          System.out.println("¿Que habitación desea reservar? (Ejemplo: 11)\n> ");
+          System.out.print("¿Que habitación desea reservar? (Ejemplo: 11)\n> ");
           String habitacion = teclado.next();
           int fila = Integer.parseInt(habitacion.substring(0,1));
           int columna = Integer.parseInt(habitacion.substring(1,2));
@@ -102,7 +102,7 @@ public class Matriz3D {
         // LIBERAR HABITACIÓN
         case 2 -> {
           // Pedir coordenadas de la habitación a liberar, utilizando la
-          // secuencia: piso, fila, columna (Ejemplo: 321) (z, x, y
+          // secuencia: piso, fila, columna (Ejemplo: 321) (z, x, y)
           System.out.print("¿Que habitación desea liberar? (Ejemplo: 321)\n> ");
           String habitacion = teclado.next();
           // TODO: Validar que se hayan ingresado 3 caracteres
@@ -119,6 +119,70 @@ public class Matriz3D {
           // Una vez que se tienen los valores, se libera la habitación
           hotel[fila-1][columna-1][piso-1] = VACIO;
           System.out.printf("Se ha liberado la habitación %d%d%d.\n", piso, fila, columna);
+        }
+        // VERIFICAR DISPONIBILIDAD DE HABITACIÓN
+        case 3 -> {
+          // Pedir coordenadas de la habitación a verificar, utilizando la
+          // secuencia: piso, fila, columna (Ejemplo: 321) (z, x, y)
+          System.out.print("¿Que habitación desea revisar? (Ejemplo: 321)\n> ");
+          String habitacion = teclado.next();
+          // Extraer las coordenadas (z, x, y)
+          int piso = Integer.parseInt(habitacion.substring(0,1));
+          int fila = Integer.parseInt(habitacion.substring(1,2));
+          int columna = Integer.parseInt(habitacion.substring(2,3));
+          // TODO: Validar rango de las coordenadas
+          // Imprimir el estatus de la habitación
+          int hab = hotel[fila-1][columna-1][piso-1];
+          if (hab == VACIO){
+            System.out.println("✅ La habitación esta disponible.");
+          } else if(hab == MTTO){
+            System.out.println("❗ La habitación esta en mantenimiento.");
+          } else {
+            System.out.printf("La habitación esta reservada para %d personas.\n", hab);
+          }
+        }
+        // VERIFICAR DISPONIBILIDAD DE UN PISO
+        case 4 -> {
+          System.out.printf("¿Qué piso quieres mostrar?[1-%d]\n> ", PISOS);
+          int piso = teclado.nextInt();
+          // TODO: Validar que "piso" no salga del rango
+          // Imprimir mapa del piso, con las habitaciones disponibles
+          for (int i = 0; i < FILAS; i++) {
+            if (i == 0){
+              System.out.printf("PISO %d\n", piso);
+            }
+            for (int j = 0; j < COLUMNAS; j++) {
+              if (hotel[i][j][piso-1] == VACIO) {
+                System.out.print("[  ]");
+              } else if (hotel[i][j][piso-1] == MTTO){
+                // La habitación está en mantenimiento
+                System.out.print("[🔨]");
+              } else {
+                // Si la habitación no está vacía, ni en mantenimiento, entonces está ocupada
+                System.out.printf("[%2d]", hotel[i][j][piso-1]);
+              }
+            }
+            System.out.println();
+          }
+        }
+        // PONER HABITACIÓN EN MANTENIMIENTO
+        case 5 -> {
+          // Pedir coordenadas de la habitación a poner en mantenimiento, utilizando la
+          // secuencia: piso, fila, columna (Ejemplo: 321) (z, x, y)
+          System.out.print("¿Que habitación se va a poner en mantenimiento? (Ejemplo: 321)\n> ");
+          String habitacion = teclado.next();
+          // Extraer las coordenadas (z, x, y)
+          int piso = Integer.parseInt(habitacion.substring(0,1));
+          int fila = Integer.parseInt(habitacion.substring(1,2));
+          int columna = Integer.parseInt(habitacion.substring(2,3));
+          // TODO: Validar rango de las coordenadas
+          // Revisar si la habitación está desocupada para ponerla en mantenimiento
+          if(hotel[fila-1][columna-1][piso-1] == VACIO){
+            hotel[fila-1][columna-1][piso-1] = MTTO;
+            System.out.printf("La habitación %d%d%d fue puesta en mantenimiento.\n", piso, fila, columna);
+          } else {
+            System.out.printf("La habitación %d%d%d está ocupada y no se puede poner en mantenimiento.\n", piso, fila, columna);
+          }
         }
       }
     } while (op != 0);
